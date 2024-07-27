@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.71])
-AC_INIT([libfoobar], [1.0.1])
+AC_INIT([libfoobar], [1.0.0])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/reverse.c])
 AC_CONFIG_HEADERS([config.h])
@@ -16,6 +16,7 @@ LT_INIT
 AC_PROG_CC
 AC_PROG_INSTALL
 AM_PROG_CC_C_O
+AC_CHECK_PROGS([DOXYGEN], [doxygen])
 
 # Checks for libraries.
 
@@ -30,5 +31,7 @@ AC_CONFIG_FILES(Makefile)
 AC_CONFIG_FILES(src/Makefile)
 AC_CONFIG_FILES(include/Makefile)
 AC_CONFIG_FILES(example/Makefile)
+AC_CONFIG_FILES(docs/Makefile)
+AC_CONFIG_FILES(docs/doxygen/Doxyfile)
 
 AC_OUTPUT
